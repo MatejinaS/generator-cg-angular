@@ -8,9 +8,9 @@
   "homepage": "https://github.com/MatejinaS/generator-cg-angular",
   "bugs": "https://github.com/MatejinaS/generator-cg-angular/issues",
   "author": {
-    "name": "Chris Gross",
-    "email": "schtoo@schtoo.com",
-    "url": "https://github.com/cgross"
+    "name": "Saso Matejina",
+    "email": "matejina@gmail.com",
+    "url": "https://github.com/MatejinaS"
   },
   "main": "app/index.js",
   "repository": {
