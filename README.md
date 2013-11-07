@@ -1,4 +1,4 @@
-#generator-cg-angular
+#generator-sm-angular
 
 >Yeoman Generator for Enterprise Angular Projects
 
@@ -53,7 +53,7 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 
 Next, install this generator:
 
-    npm install -g generator-cg-angular
+    npm install -g generator-sm-angular
 
 To create a project:
 

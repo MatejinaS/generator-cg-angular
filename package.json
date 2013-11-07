@@ -1,12 +1,12 @@
 {
-	"name": "generator-cg-angular",
+	"name": "generator-sm-angular",
 	"version": "1.0.4",
 	"description": "Yeoman Generator for Enterprise Angular projects.",
 	"keywords": [
 		"yeoman-generator"
 	],
-	"homepage": "https://github.com/MatejinaS/generator-cg-angular",
-	"bugs": "https://github.com/MatejinaS/generator-cg-angular/issues",
+	"homepage": "https://github.com/MatejinaS/generator-sm-angular",
+	"bugs": "https://github.com/MatejinaS/generator-sm-angular/issues",
 	"author": {
 		"name": "Saso Matejina",
 		"email": "matejina@gmail.com",
@@ -15,7 +15,7 @@
 	"main": "app/index.js",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/MatejinaS/generator-cg-angular.git"
+		"url": "git://github.com/MatejinaS/generator-sm-angular.git"
 	},
 	"scripts": {
 		"test": "mocha"
