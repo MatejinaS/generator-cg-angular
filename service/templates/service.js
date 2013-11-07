@@ -1,6 +1,6 @@
-angular.module('<%= appname %>').factory('<%= name %>',function() {
+angular.module('<%= appname %>').factory('<%= _.classify(name) %>',function() {
 
-	var <%= name %> = {};
+	var <%= _.classify(name) %> = {};
 
-	return <%= name %>;
+	return <%= _.classify(name) %>;
 });

@@ -22,6 +22,6 @@ ServiceGenerator.prototype.files = function files() {
 	this.template('service.js', 'service/'+this.name+'.js');
 	this.template('spec.js', 'test/unit/service/'+this.name+'.js');
 
-	cgUtils.addToFile('index.html','<script src="service/'+this.name+'.js"></script>',cgUtils.SERVICE_JS_MARKER,'  ');
+	cgUtils.addToFile('index.html','<script src="service/'+this.name+'.js"></script>',cgUtils.SERVICE_JS_MARKER,'\t');
 	this.log.writeln(' updating'.green + ' %s','index.html');
 };

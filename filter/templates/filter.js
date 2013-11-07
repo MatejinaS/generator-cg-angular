@@ -1,4 +1,4 @@
-angular.module('<%= appname %>').filter('<%= name %>', function() {
+angular.module('<%= appname %>').filter('<%= _.classify(name) %>', function() {
 	return function(input,arg) {
 		return '';
 	};

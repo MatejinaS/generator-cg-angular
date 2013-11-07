@@ -8,6 +8,9 @@ angular.module('<%= appname %>').directive('<%= _.classify(name).charAt(0).toLow
 		templateUrl: 'directive/<%= name %>/<%= name %>.html',
 		link: function(scope, element, attrs, fn) {
 
+		},
+		controller: function($scope) {
+			
 		}
 	};
 });

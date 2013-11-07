@@ -1,10 +1,10 @@
-describe('<%= name %>', function() {
+describe('<%= _.classify(name) %>', function() {
 
   beforeEach(module('<%= appname %>'));
 
-  it('should ...', inject(function(<%= name %>) {
+  it('should ...', inject(function(<%= _.classify(name) %>) {
 
-	//expect(<%= name %>.doSomething()).toEqual('something');
+	//expect(<%= _.classify(name) %>.doSomething()).toEqual('something');
 
   }));
 

@@ -1,10 +1,15 @@
-angular.module('<%= _.slugify(appname) %>', ['ui.bootstrap','ui']);
+angular.module('<%= _.slugify(appname) %>', [
+	'ngResource', 
+	'ngCookies', 
+	'ngSanitize',
+	'ngRoute'
+]);
 
 angular.module('<%= _.slugify(appname) %>').config(function($routeProvider) {
 
-    $routeProvider.
-    /* Add New Routes Above */
-    otherwise({redirectTo:'/home'});
+	$routeProvider.
+	/* Add New Routes Above */
+	otherwise({redirectTo:'/home'});
 
 });
 
