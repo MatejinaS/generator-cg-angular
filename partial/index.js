@@ -43,14 +43,14 @@ PartialGenerator.prototype.files = function files() {
 
 	this.template('partial.js', 'partial/'+this.name+'/'+this.name+'.js');
 	this.template('partial.html', 'partial/'+this.name+'/'+this.name+'.html');
-	this.template('partial.less', 'partial/'+this.name+'/'+this.name+'.less');
+	this.template('partial.css', 'partial/'+this.name+'/'+this.name+'.css');
 	this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
 
 	cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'\t');
 	this.log.writeln(' updating'.green + ' %s','index.html');
 
-	cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+this.name+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
-	this.log.writeln(' updating'.green + ' %s','app/app.less');
+	cgUtils.addToFile('css/app.css','@import "../partial/'+this.name+'/'+this.name+'.css";',cgUtils.PARTIAL_CSS_MARKER,'');
+	this.log.writeln(' updating'.green + ' %s','app/app.css');
 
 	if (this.route && this.route.length > 0){
 		cgUtils.addToFile('js/setup.js','when(\''+this.route+'\',{templateUrl: \'partial/'+this.name+'/'+this.name+'.html\'}).',cgUtils.ROUTE_MARKER,'\t');

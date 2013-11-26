@@ -11,15 +11,14 @@ Features
    * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
-* Integrates LESS and includes Bootstrap via the source LESS files allowing you to reuse Bootstrap vars/mixins/etc.
 * Testable - Included Yeoman sub-generators also build test skeletons.  Run test via `grunt test`.
 
 Directory Layout
 -------------
 Below is an explanation of the folder structure.
 
-    /css ........................... usually only contains app.less
-        app.less ................... main app-wide styles
+    /css ........................... usually only contains app.css
+        app.css ................... main app-wide styles
     /img ........................... images (not created by default but included in /dist if added)
     /js ............................ app global javascript files
         setup.js ................... angular module initialization and route setup
@@ -28,14 +27,14 @@ Below is an explanation of the folder structure.
         /my-directive2 ............. example complex directive (contains external partial)
             my-directive2.js ....... complex directive javascript
             my-directive2.html...... complex directive partial
-            my-directive2.less ..... complex directive LESS
+            my-directive2.css ...... complex directive CSS
     /filter ........................ angular filters folder
         my-filter.js ............... example filter
     /partial ....................... angular partials folder
         /my-partial ................ example partial
             my-partial.html ........ example partial html
             my-partial.js .......... example partial controller
-            my-partial.less ........ example partial LESS
+            my-partial.css ......... example partial CSS
     /service ....................... angular services folder
         my-service.js .............. example service
     /dist .......................... distributable version of app built using grunt and Gruntfile.js
@@ -59,7 +58,7 @@ To create a project:
 
     mkdir MyNewAwesomeApp
     cd MyNewAwesomeApp
-    yo cg-angular
+    yo sm-angular
 
 Grunt Tasks
 -------------
@@ -75,20 +74,20 @@ Yeoman Subgenerators
 
 There are a set of sub-generators to initialize empty Angular components.  Each of these generators will:
 
-* Create one or more skeleton files (javascript, LESS, html, etc) for the component type
+* Create one or more skeleton files (javascript, CSS, html, etc) for the component type
 * Create a skeleton unit test in /test
 * Update index.html and add the necessary `script` tags.
-* Update app.less and add the @import as needed.
+* Update app.css and add the @import as needed.
 * For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.
 
 There are generators for `directive`,`partial`,`service`, and `filter`.
 
 Running a generator:
 
-    yo cg-angular:directive my-awesome-directive
-    yo cg-angular:partial my-partial
-    yo cg-angular:service my-service
-    yo cg-angular:filter my-filter
+    yo sm-angular:directive my-awesome-directive
+    yo sm-angular:partial my-partial
+    yo sm-angular:service my-service
+    yo sm-angular:filter my-filter
 
 The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').
 
@@ -99,7 +98,7 @@ Build Process
 
 The project will include a ready-made Grunt build that will:
 
-* Build all the LESS files into one minified CSS file.
+* Build all the CSS files into one minified CSS file.
 * Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.
 * Uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) to preprocess all Angular injectable methods and add the necessary Angular annotations to ensure minification will not break your app (and you don't have to use the array syntax to 
 manually add the annotations nor $inject).  Read more about [ngmin](https://github.com/btford/ngmin).
@@ -115,7 +114,7 @@ The build process uses [grunt-dom-munger](https://github.com/cgross/grunt-dom-mu
 
 Release History
 -------------
-* 9/06/2013 - V1.0.4 - Fixed templating issue with generated specs for `yo cg-angular:service` subgenerator.
+* 9/06/2013 - V1.0.4 - Fixed templating issue with generated specs for `yo sm-angular:service` subgenerator.
 * 8/29/2013 - V1.0.3 - Renamed `/lib` back to `/bower_components` as clarity trumps brevity.  Renamed `/bin` to `/dist`. Fixed spelling error in generated directive's js template location.  Moved up to later version of `yeoman-generator` dependency to solve "Cannot read bold of undefined" error coming from Yeoman.  JSHint options now read from `.jshintrc`.  And more small stuff.
 * 7/08/2013 - V1.0.2 - Added utf8 charset to index.html.  Fix for "EMFile, too many open files" on `grunt watch` by no longer watching the `lib` folder.
 * 6/20/2013 - v1.0.1 - Fixed a ton of known issues.  Replaced `grunt-regarde` with `grunt-contrib-watch`.  Fixed and tweaked the unit test specs and `grunt test`.  Fixed issues with the build.  Generator is now ready for real use.

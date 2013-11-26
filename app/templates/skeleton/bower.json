@@ -8,18 +8,16 @@
 	"bower_components"
 	],
 	"dependencies": {
-		"jquery": "latest",
+		"jquery": "<=1.10.2",
 		"lodash": "latest",
 		"bootstrap": "latest",
-		"angular": "1.2.0-rc.3",
-		"angular-resource": "1.2.0-rc.3",
-		"angular-cookies": "1.2.0-rc.3",
-		"angular-mocks": "1.2.0-rc.3",
-		"angular-sanitize": "1.2.0-rc.3",
-		"angular-route": "1.2.0-rc.3",
+		"angular": "latest",
+		"angular-resource": "latest",
+		"angular-cookies": "latest",
+		"angular-mocks": "latest",
+		"angular-sanitize": "latest",
+		"angular-route": "latest",
 		"moment": "latest",
-		"less.js": "latest",
-		"font-awesome": "latest",
-		"momentjs": "latest"
+		"font-awesome": "latest"
 	}
 }
