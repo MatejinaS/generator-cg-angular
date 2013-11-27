@@ -1,6 +1,6 @@
 {
 	"name": "generator-sm-angular",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Yeoman Generator for Enterprise Angular projects.",
 	"keywords": [
 		"yeoman-generator"
