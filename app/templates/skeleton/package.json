@@ -21,6 +21,7 @@
 		"grunt-contrib-watch": ">=0.4.4",
 		"grunt-contrib-jasmine": ">=0.5.1",
 		"grunt-contrib-rename": "latest",
-		"connect-modrewrite": "latest"
+		"connect-modrewrite": "latest",
+		"grunt-cssjoin": "latest"
 	}
 }

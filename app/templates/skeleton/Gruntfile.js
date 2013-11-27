@@ -42,6 +42,13 @@ module.exports = function (grunt) {
 				src:['temp']
 			}
 		}, 
+		cssjoin: {
+			join :{
+				files: {
+					'temp/app.css': 'css/app.css',
+				},
+			}
+		},  
 		ngtemplates: {
 			main: {
 				options: {
@@ -112,7 +119,7 @@ module.exports = function (grunt) {
 		},
 		cssmin: {
 			main: {
-				src:['css/app.css','<%%= dom_munger.data.appcss %>'],
+				src:['temp/app.css','<%%= dom_munger.data.appcss %>'],
 				dest:'dist/css/app.full.min.css'
 			}
 		},
@@ -175,12 +182,13 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-dom-munger');
 grunt.loadNpmTasks('grunt-contrib-htmlmin');
 grunt.loadNpmTasks('grunt-contrib-imagemin');
+grunt.loadNpmTasks('grunt-cssjoin');
 grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-ngmin');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-rename');
 
-grunt.registerTask('build',['jshint','clean:before','dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after', 'rename']);
+grunt.registerTask('build',['jshint','clean:before','cssjoin','dom_munger:readcss','dom_munger:readscripts','ngtemplates','cssmin','concat','ngmin','uglify','copy','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after', 'rename']);
 grunt.registerTask('server', ['jshint','connect', 'watch']);
 grunt.registerTask('test',['dom_munger:readscripts','jasmine'])
 };
